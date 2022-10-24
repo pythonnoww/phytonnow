@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
+    <title>Curso Pythonnow</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="navbar-container">
+            <h1 class="logo">Pythonnow</h1>
+            <ul id="navbar-items">
+                <li><a href="site.html">Home</a></li>
+                <li><a href="avancado.html">Aulas</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <header id="showcase">
+        <div id="showcase-container">
+            <div class="texto">
+                
+                    <h1>Classes, Objetos, Métodos e Atributos</h1>
+                    
+                    <p>
+Esses conceitos são os pilares da Programação Orientada a Objetos então é muito importante que você os DOMINE:
+<br><br><br><br>
+- As Classes são tipos de dados definidos pelo desenvolvedor que atuam como um modelo para objetos. Pra não esquecer mais: Classes são fôrmas de bolo e bolos são objetos.
+<br><br>
+- Objetos são instâncias de uma Classe. Objetos podem modelar entidades do mundo real (Carro, Pessoa, Usuário) ou entidades abstratas (Temperatura, Umidade, Medição, Configuração)
+<br><br>
+- Métodos são funções definidas dentro de uma classe que descreve os comportamentos de um objeto. Em Python, o primeiro parâmetro dos métodos é sempre uma referência ao próprio objeto.
+Os atributos são definidos na Classe e representam o estado de um objeto. Os objetos terão dados armazenados nos campos de atributos. Também existe o conceito de atributos de classe, mas veremos isso mais pra frente.
+<br><br><br><br><br><br>
+
+Python possui palavras reservadas (keywords) para criarmos Classes e Objetos.
+<br><br>
+Primeiro, temos a keyword class que utilizamos para criar uma classe.
+Também temos a keyword self, utilizada para guardar a referência ao próprio objeto.
+Uma observação importante, caso você venha de outra linguagem de programação: Python não utiliza a keyword new para instanciar novos objetos!
+Vamos logo para o código! Tudo ficará mais claro 
+<br><br><br><br>
+Vamos criar uma classe que representa uma entidade do tipo Pessoa!
+Ela deve ter os seguintes campos:
+<br><br><br><br>
+Nome como String;
+<br><br>
+Idade como Inteiro;
+<br><br>
+Altura como Decimal.
+<br><br><br><br>
+
+
+Também deve ter métodos para:
+<br><br>
+Dizer “Olá”;
+Cozinhar;
+Andar.
+<br><br><br><br>
+<img src="print1.PNG" alt="">
+<br><br><br><br>
+
+
+
+Agora vamos explicar “tintim por tintim”:
+<br><br>
+Temos a definição da Classe na primeira linha com class Pessoa. Isso diz ao Python que vamos criar a definição de uma nova classe.
+<br><br>
+Em seguida, temos o método __init__. Ele é muito importante e é chamado de Construtor. Ele é chamado ao se instanciar objetos e é nele que geralmente setamos os atributos do objeto.
+<br><br>
+Em seguida temos a definição dos métodos  dizer_ola(), cozinhar() e andar().
+Perceba que no método dizer_ola() referenciamos os atributos do próprio objeto com o argumento self: self.nome, self.idade e self.altura.
+
+<br><br><br><br>
+<img src="print2.PNG" alt="">
+<br><br><br><br>
+
+Se lembra do Construtor?
+Então, ele entrou em ação na linha 2 do código acima!
+<br><br>
+Quando escrevemos pessoa = Pessoa(), chamamos o método __init__ da classe Pessoa, passando os parâmetros nome, idade e altura.
+A saída dessas linhas de código será:
+<br><br><br><br>
+<img src="print3.PNG" alt="">
+
+                </p>
+            </div>
+            
+        </div>
+    </header>
+
+    <!-- About -->
+    
+
+    
+
+
+           
+            
+
+    <footer id="footer">
+        <p>Copyright 2022 - Todos os direitos reservados.</p>
+        <p>Feito por Phitonnow.</p>
+    </footer>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- Our JS file -->
+    <script src="main.js"></script>
+</body>
+
+</html>

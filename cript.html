@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
+    <title>Curso Pythonnow</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="navbar-container">
+            <h1 class="logo">Pythonnow</h1>
+            <ul id="navbar-items">
+                <li><a href="site.html">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="showcase4">
+        <div id="showcase-container">
+            <div class="texto">
+
+                    <h1>CRIPTOGRAFIA</h1> 
+                <p>
+                    
+                    Criptografia é o ato de decodificar a mensagem de forma que apenas os usuários pretendidos possam vê-la. Nós criptografamos dados porque não queremos que ninguém os veja ou os acesse. Usaremos a biblioteca cryptography para criptografar um arquivo. 
+                    <br><br>
+                    A biblioteca de criptografia usa um algoritmo simétrico para criptografar o arquivo. No algoritmo simétrico, usamos a mesma chave para criptografar e descriptografar o arquivo. O módulo fernet do pacote de criptografia possui funções integradas para a geração da chave, criptografia de texto simples em texto cifrado e descriptografia de texto cifrado em texto simples usando os métodos encrypt() e decrypt(), respectivamente. O módulo fernet garante que os dados criptografados usando-o não possam ser manipulados ou lidos sem a chave.
+                    <br><br>
+                    Vamos usar o arquivo nba.csv para realizar todas as operações.
+                    <br><br><br>
+                    Instalação:
+                    <br><br><br>
+                    A biblioteca cryptography  pode ser instalada usando o comando abaixo:
+                    <br><br>
+                    <b>pip install cryptography</b>
+                    <br><br><br>
+                    Gerar chave para criptografar o arquivo
+                    <br><br>
+                    Na biblioteca de criptografia, existe um algoritmo de criptografia chamado fernet . Usaremos o módulo fernet para criptografar o arquivo.
+                    <br><br>
+                   <b> # importando o módulo requerido</b>
+                   <br><br>
+<b>from cryptography.fernet import FernetFernet</b>
+<br><br><br><br>
+Gerando a chave e salvando-a:
+<b>
+    <br><br>
+    # geração de chave
+    <br>
+key = Fernet.generate_key()
+<br><br>
+# string a chave em um arquivo
+<br>
+with open('filekey.key', 'wb') as filekey:
+<br>
+filekey.write(key)filekey.write(key)
+</b>
+<br><br>
+O código acima irá gerar um arquivo com o nome filekey.key. O arquivo conterá uma linha, que é uma string agindo como uma chave, ou seja, J64ZHFpCWFlS9zT7y5zxuQN1Gb09y7cucne_EhuWyDM =
+<br><br><br>
+Criptografe o arquivo usando a chave gerada
+<br><br>
+Agora temos uma chave criptografada e um arquivo a ser criptografado. Agora escreva o código para criptografar este arquivo:
+<br><br><br>
+1.Abra o arquivo que contém a chave.
+<br>
+2.Inicialize o objeto Fernet e armazene-o na variável fernet.
+<br>
+3.Leia o arquivo original.
+<br>
+4.Criptografe o arquivo e armazene-o em um objeto.
+<br>
+5.Em seguida, grave os dados criptografados no mesmo arquivo nba.csv .
+<br><br><br><br>
+<b># abrindo a chave
+        <br>
+        with open('filekey.key', 'rb') as filekey:
+        <br>
+        key = filekey.read()
+        <br><br>
+        
+        # usando a chave gerada
+        <br>
+        fernet = Fernet(key)
+        <br><br>
+        
+        # abrindo o arquivo original para criptografar
+        <br>
+        with open('nba.csv', 'rb') as file:
+        <br>
+        original = file.read()
+        <br><br><br>
+        
+        # criptografar o arquivo
+        <br>
+        encrypted = fernet.encrypt(original)
+        <br><br>
+        
+        # abrir o arquivo no modo de gravação e
+        <br>
+        # gravar os dados criptografados
+        <br>
+        with open('nba.csv', 'wb') as encrypted_file:
+        <br>
+        encrypted_file.write(encrypted)encrypted_file.write(encrypted)
+        <br><br></b>
+        <img src="foto1.PNG" alt="">
+        <br><br><br>
+        Descriptografar o arquivo criptografado
+        <br><br>
+Temos que usar a mesma chave para descriptografar o arquivo:
+<br><br>
+
+1.Inicialize o objeto Fernet e armazene-o na variável fernet .
+<br>
+2.Le1ia o arquivo criptografado.
+<br>
+3.Descriptografe o arquivo e armazene-o em um objeto.
+<br>
+Em seguida, grave os dados descriptografados no mesmo arquivo
+<br><br><br>
+<b>
+        nba.csv.
+        <br>
+        # usando a chave
+        <br>
+        fernet = Fernet(key)
+        <br><br>
+        
+        # abrindo o arquivo criptografado
+        <br>
+        with open('nba.csv', 'rb') as enc_file:
+        <br>
+            encrypted = enc_file.read()
+            <br><br><br>
+        
+        # descriptografando o arquivo
+        <br>
+        decrypted = fernet.decrypt(encrypted)
+        <br><br>
+        
+        # abrindo o arquivo no modo de gravação e
+        <br>
+        # gravando os dados descriptografados
+        <br>
+        with open('nba.csv', 'wb') as dec_file:
+        <br>
+            dec_file.write(decrypted)
+            <br><br><br>
+            <img src="foto2.PNG" alt="">
+            <br><br><br><br><br><br>
+        </b>
+            2°criptografia
+            <br><br>
+
+            O módulo fernet do pacote de criptografia possui funções integradas para a geração da chave, criptografia de texto simples em texto cifrado e descriptografia de texto cifrado em texto simples usando os métodos criptografar e decriptografar, respectivamente. O módulo fernet garante que os dados criptografados usando-o não possam ser manipulados ou lidos sem a chave. 
+<br><br>
+            Métodos usados:
+<br><br>
+-generate_key(): Este método gera uma nova chave fernet. A chave deve ser mantida em segurança, pois é o componente mais importante para descriptografar o texto cifrado. Se a chave for perdida, o usuário não poderá mais descriptografar a mensagem. Além disso, se um intruso ou hacker obtiver acesso à chave, ele poderá não apenas ler os dados, mas também falsificá-los.
+<br><br>
+-criptografar (dados): criptografa os dados passados ​​como parâmetro para o método. O resultado dessa criptografia é conhecido como “token Fernet”, que é basicamente o texto cifrado. O token criptografado também contém o carimbo de data / hora atual quando foi gerado em texto simples. O método encrypt lança uma exceção se os dados não estiverem em bytes.
+<br><br><br>
+Parâmetros:
+<br><br>
+-dados (bytes) - O texto simples a ser criptografado.
+<br>
+Valor de retorno: um texto cifrado que não pode ser lido ou alterado sem a chave. Ele é codificado em base64 seguro para URL e é conhecido como token Fernet.
+<br><br>
+-decrypt (token, ttl = None): este método descriptografa o token Fernet passado como um parâmetro para o método. Em uma descriptografia bem-sucedida, o texto simples original é obtido como resultado, caso contrário, uma exceção é lançada.
+<br><br><br>
+Parâmetros:
+ <br><br>
+ 
+-token (bytes) - O token Fernet (texto cifrado) é passado para descriptografia.
+<br><br>
+-ttl (int) - Opcionalmente, pode-se fornecer um número inteiro como segundo parâmetro no método de descriptografia. O ttl denota o tempo de validade de um token. Se o token for mais antigo do que ttl segundos (a partir do momento em que foi originalmente criado), uma exceção é lançada. Se ttl não for passado como um parâmetro, a idade do token não será considerada. Se o token for de alguma forma inválido, uma exceção será lançada.
+<br><br>
+Valor de retorno:   retorna o texto simples original.
+<br><br>
+Passos para escrever o programa:
+<br><br>
+Primeiramente, o pacote de criptografia precisa ser instalado usando o seguinte comando:
+<br><br>
+<b>
+        pip instalar criptografia
+        <br>
+        from cryptography.fernet import Fernet 
+        <br>
+        key = Fernet.generate_key() 
+        <br>
+        f = Fernet(key) 
+        <br>
+        token = f.encrypt(b"welcome to geeksforgeeks") 
+        <br>
+        print(token) 
+        <br>
+        d = f.decrypt(token) 
+        <br>
+        print(d)
+</b> 
+<br><br><br>
+Resultado:
+<br><br>
+b'gAAAAABfYMSL3Cjz8I8Sg7NwatdtTvOtqHtPrNDGXTGx4w1gW-9yvrMBUFz3bAWnwVk2WjcOrhjfAzyX7Z6M1IDbcRDhxPvd2dKPjelgeVcome'heek1AR = 'bwdflvvvc-bdKPjwypvvc ='
+<br>
+bwdflv4hddhddhdhdhdhdhdhdhdhdhdh = '
+<br><br>
+A saída descriptografada possui um 'b' na frente da mensagem original que indica o formato do byte. No entanto, isso pode ser removido usando o método decode() durante a impressão da mensagem original. O programa abaixo implementa o método decode(). 
+<br><br>
+<b>from cryptography.fernet import Fernet
+    <br>
+        key = Fernet.generate_key()
+        <br>
+        f = Fernet(key)
+        <br>
+        token = f.encrypt(b"welcome to geeksforgeeks") 
+        <br>
+        print(token)
+        <br>
+        d = f.decrypt(token) 
+        <br>
+        print(d.decode()) </b>
+ <br><br><br>
+Resultado:
+<br><br>
+b'gAAAAABfYMTfbEYTSsU6BCyXr9ArUIbpELTu5axUtWRfIxc4zzv3AktmOwdNSd1rH_
+br
+zrL4Qz7tDi1K067kLx0Ma3S828neekJlPlay9Y7Kel0_Z28neek
+<br>
+to gjlPlay9Y7Kel0_Zg3
+
+
+      
+
+
+
+
+
+                </p>
+            </div>
+            
+        </div>
+    </header>
+
+    <!-- About -->
+    
+
+    
+
+
+           
+            
+
+    <footer id="footer">
+        <p>Copyright 2022 - Todos os direitos reservados.</p>
+        <p>Feito por Phitonnow.</p>
+    </footer>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- Our JS file -->
+    <script src="main.js"></script>
+</body>
+
+</html>
+
+
+

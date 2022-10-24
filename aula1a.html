@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
+    <title>Curso Pythonnow</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="navbar-container">
+            <h1 class="logo">Pythonnow</h1>
+            <ul id="navbar-items">
+                <li><a href="site.html">Home</a></li>
+                <li><a href="avancado.html">Aulas</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <header id="showcase3">
+        <div id="showcase-container">
+            <div class="texto">
+
+                    <h1>Funções e escopos</h1> 
+                <p>                 
+ 
+Variável
+<br><br><br><br>
+Uma variável é um rótulo ou um nome dado a um determinado local na memória. Esse local contém o valor que você deseja que seu programa lembre, para uso posterior. O que é ótimo no Python é que você não precisa declarar explicitamente qual é o tipo de variável que deseja definir – ela pode ser de qualquer tipo (string, número inteiro, float etc.).
+<br><br>
+Para criar uma nova variável no Python, basta usar o operador de atribuição ( = um único sinal de igual) e atribuir o valor desejado a ela.
+<br><br><br><br>
+<img src="printe1.PNG" alt="">
+<br><br><br><br>
+Atribuir um valor inicial a uma variável é chamado inicializar a variável. Você acabou de inicializar a variável: <br><br> <b>first_string_var</b> com um valor de sequência de Primeira sequência e variável <b>first_int_var</b> com um valor inteiro ou numérico de 1.
+<br><br>
+A parte à esquerda do operador de atribuição é o nome da variável e o lado direito é o seu valor. O lado direito também pode ser uma operação aritmética – nesse caso, ela será avaliada antes da atribuição.
+<br><br>
+Python tem algumas regras que você deve seguir ao criar uma variável …
+<br><br><br><br>
+-Ele pode conter apenas letras (maiúsculas ou minúsculas), números ou o caractere sublinhado _
+<br><br>
+-Pode não começar com um número;
+<br><br>
+-Pode não ser uma palavra-chave (você aprenderá sobre elas mais tarde).
+<br><br><br><br>
+Se você não seguir essas regras, receberá um erro. Experimente você mesmo:
+<br><br><br><br>
+<img src="printe2.PNG" alt="">
+<br><br>
+<img src="printe3.PNG" alt="">
+<br><br><br><br>
+
+Escopo Variável
+<br><br><br>
+Agora que você sabe como inicializar uma variável. Vamos falar sobre o escopo dessas variáveis. Nem todas as variáveis ​​podem ser acessadas de qualquer lugar do programa. A parte de um programa em que uma variável está acessível é chamada de escopo. Existem quatro tipos principais de Escopo de variáveis em Python e é a base para a regra LEGB.
+<br><br>
+LEGB significa Local -> Enclosing -> Global -> Built-in.
+<br><br>
+Vamos aprender mais sobre escopos …
+<br><br><br><br><br>
+Escopo local
+<br><br><br>
+Sempre que você define uma variável dentro de uma função, seu escopo fica APENAS dentro da função. É acessível a partir do ponto em que é definida até o final da função e existe enquanto a função estiver em execução ( Origem ). O que significa que seu valor não pode ser alterado ou mesmo acessado de fora da função. Vamos dar um exemplo simples:
+<br><br><br><br>
+<img src="printe4.PNG" alt="">
+<br><br>
+<img src="printe5.PNG" alt="">
+
+<br><br>
+<img src="printe6.PNG" alt="">
+<br><br><br><br>
+Conseguimos imprimir a variável  <b>first_num</b> chamando a <b>função print_number()</b>(# Print statement 1). Mas, ao tentar acessar e imprimir a mesma variável de fora da função (# Print statement 2), ele levantou a <b>NameError</b>. Isso ocorre porque first_num é “local” para a função – portanto, não pode ser acessado de fora do corpo da função.
+
+
+
+
+                </p>
+            </div>
+            
+        </div>
+    </header>
+
+    <!-- About -->
+    
+
+    
+
+
+           
+            
+
+    <footer id="footer">
+        <p>Copyright 2022 - Todos os direitos reservados.</p>
+        <p>Feito por Phitonnow.</p>
+    </footer>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- Our JS file -->
+    <script src="main.js"></script>
+</body>
+
+</html>
+
+
+
